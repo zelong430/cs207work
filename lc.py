@@ -18,6 +18,12 @@ def lc_reader(filename):
                 if i == 1:
                     temp_label = temp
                 elif i == 2:
+                    # maintain the numeric type of values
+                    for i in range(len(temp)):
+                        try:
+                            temp[i] = float(temp[i])
+                        except:
+                            continue
                     temp_value = temp
                 #print (temp)
                 dict_of_facets = dict(zip(temp_label, temp_value)) 
